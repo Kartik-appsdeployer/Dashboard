@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  font-family: 'Titillium Web', sans-serif;
+  background: rgb(153, 153, 153);
+}
+
+.centerLogin{
+  background: white;
+  width: 500px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  text-align: center;
+  margin-top: 95px;
+  border-radius: 20px;
+  margin-left: 488px;
+}
+.Heading{
+  background: rgb(254, 103, 241);
+  padding: 12px;
+  margin-bottom: 13px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+.loginDetails{
+  padding: 10px;
+}
+.inputs{
+  width: 375px;
+  padding: 9px;
+  outline: none;
+  border: none;
+  border-radius: 25px;
+  font-size: 17px;
+  margin-bottom: 51px;
+  background: #dbd5d5;
+  text-align: center;
+}
+.lables{
+  font-size: 17px;
+  font-weight: bold;
+}
+.saveButton{
+  background: #51f751;
+  width: 365px;
+  padding: 12px;
+  border-radius: 30px;
+  font-size: 21px;
+  font-weight: bold;
+  border: none;
+  margin-bottom: 24px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.saveButton:hover{
+  background: #a6fba6;
+  width: 380px;
+}
