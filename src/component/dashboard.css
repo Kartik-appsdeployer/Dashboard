@@ -43,7 +43,7 @@ opacity: .7;
 }
 .Login:hover{
     background: rgb(97, 97, 233);
-    width: 200px;
+    box-shadow: red 0px 5px 15px;
 }
 .first{
     margin-left: 78px;
@@ -64,6 +64,14 @@ opacity: .7;
 }
 .Graph .Monthly{
     margin-left: 460px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.Graph .Monthly:hover{
+    padding: 20px;
+    margin-left: 400px;
+    box-shadow: red 0px 5px 15px;
 }
 
 .Tables{
