@@ -16,7 +16,7 @@ const initialState = {
 const UserLogin = () => {
 
   const navigate = useNavigate();
-
+  const [done, setDone] = useState(false);
   const [auth, setAuth] = useState(initialState);
 
   const {Name, Email, Password} = auth;
@@ -38,30 +38,33 @@ const UserLogin = () => {
         displateName: Name
       });
       toast.success("Signed Up!!")
+      setDone(true)
       navigate('/')
     }).catch((err) => {
+      setDone(false)
       toast.error(err.message);
     })
 
 
     // Adding User to Data base
-    let date = new Date();
-    let prev = date.getDate();
-    // date.setDate(prev - 1);
-    date.setDate(prev);
-    // date.setMonth(10)
-    let newDate = date.toJSON().slice(0, 10)
-    const uuid = uuidv4();
-    set(ref(db, 'Users/' + uuid), {
-      Name: auth.Name,
-      Email: auth.Email,
-      Password: auth.Password,
-      Date: newDate
-    }).then((res) => {
-    }).catch((err) => {
-      console.log(err)
-    })
-
+    if(done){
+      let date = new Date();
+      let prev = date.getDate();
+      // date.setDate(prev - 1);
+      date.setDate(prev);
+      // date.setMonth(10)
+      let newDate = date.toJSON().slice(0, 10)
+      const uuid = uuidv4();
+      set(ref(db, 'Users/' + uuid), {
+        Name: auth.Name,
+        Email: auth.Email,
+        Password: auth.Password,
+        Date: newDate
+      }).then((res) => {
+      }).catch((err) => {
+        console.log(err)
+      })
+    }
   }
 
   return (
