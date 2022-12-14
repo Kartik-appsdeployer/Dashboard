@@ -47,7 +47,9 @@ const UserLogin = () => {
     // Adding User to Data base
     let date = new Date();
     let prev = date.getDate();
+    // date.setDate(prev - 1);
     date.setDate(prev);
+    // date.setMonth(10)
     let newDate = date.toJSON().slice(0, 10)
     const uuid = uuidv4();
     set(ref(db, 'Users/' + uuid), {
@@ -67,7 +69,7 @@ const UserLogin = () => {
       <div className="loginContainer">
         <div className="centerLogin">
           <div className="Heading">
-            <h1>User Login</h1>
+            <h1>User Signup</h1>
           </div>
 
           <div className="loginDetails">
@@ -83,7 +85,7 @@ const UserLogin = () => {
             <input className="inputs" autoComplete="off" type="password" placeholder="Enter your Password" onChange={(e) => setAuth((prev) => ({...prev, Password: e.target.value}))} />
             <br />
 
-            <button onClick={handleSubmit} className="saveButton">Login</button>
+            <button onClick={handleSubmit} className="saveButton">Sign Up</button>
           </div>
         </div>
       </div>

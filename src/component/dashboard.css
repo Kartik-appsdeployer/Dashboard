@@ -41,16 +41,34 @@ opacity: .7;
     text-align: center;
     transition: 0.5s;
 }
-.third{
-    margin-left: 73px;
-}
 .Login:hover{
     background: rgb(97, 97, 233);
     width: 200px;
 }
+.first{
+    margin-left: 78px;
+}
+
+.Graph{
+    padding-top: 54px;
+    padding-bottom: 54px;
+    padding-left: 50px;
+    text-align: center;
+    padding-right: 50px;
+    border-top: 0.5px solid black;
+    display: flex;
+    justify-content: space-between;
+}
+.H1{
+    margin-bottom: 20px;
+}
+.Graph .Monthly{
+    margin-left: 460px;
+}
 
 .Tables{
     display: flex;
+    margin-bottom: 65px;
     justify-content: space-between;
     padding: 10px;
 }

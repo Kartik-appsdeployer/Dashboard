@@ -1,7 +1,7 @@
 import { React, useState, useEffect } from 'react'
 import { db } from '../firebase';
 import { Link } from 'react-router-dom';
-import { Bar } from 'react-chartjs-2';
+// import { Bar } from 'react-chartjs-2';
 import { ref, onValue } from "firebase/database";
 import './dashboard.css'
 import Chart from "react-apexcharts";
@@ -84,7 +84,8 @@ const Dashboard = () => {
       dec += 1;
     }
   }
-  const [state, setState] = useState({
+  console.log(jan, feb, mar, apr, may, june, july, aug, sept, oct, nov, dec);
+  const state = {
     options: {
       chart: {
         id: "basic-bar"
@@ -95,11 +96,11 @@ const Dashboard = () => {
     },
     series: [
       {
-        name: "series-1",
+        name: "Total Users",
         data: [jan, feb, mar, apr, may, june, july, aug, sept, oct, nov, dec]
       }
     ]
-  });
+  };
 
 
   return (
@@ -107,26 +108,28 @@ const Dashboard = () => {
       <div className="NavBar">
         <h1>Dashboard</h1>
         <div className="RightCorner">
-          <Link className='Login' to='/'>Login as User</Link>
+          <Link className='Login' to='/'>Sign Up as User</Link>
         </div>
       </div>
 
       <div className='Tables' style={{ marginTop: "100px" }}>
 
-        <div className="">
-          <h1>Today's Registered Users</h1>
+        <div className="first">
+          <h1 className="H1">Today's Registered Users</h1>
           <table>
             <tr>
               <th>S NO</th>
               <th>Name</th>
               <th>Email</th>
+              <th>Date of Registration</th>
             </tr>
             {
-              data1.map((object, index) => (
+              data1.map((object) => (
                 object.Date === new Date().toJSON().slice(0, 10) ? <tr>
-                  <th scope='row'>{index + 1}</th>
+                  <th scope='row'>-></th>
                   <td>{object.Name}</td>
                   <td>{object.Email}</td>
+                  <td>{object.Date}</td>
                 </tr> :
                   <tr></tr>
               ))
@@ -135,23 +138,18 @@ const Dashboard = () => {
         </div>
 
 
-        <div>
-          <h1>Monthly Registered Users</h1>
-          <Chart
-            options={state.options}
-            series={state.series}
-            type="bar"
-            width="500"
-          />
-        </div>
+        {/* <div>
+          
+        </div> */}
 
-        <div className='third'>
-          <h1>All Users</h1>
+        <div>
+          <h1 className="H1">All Registered Users</h1>
           <table>
             <tr>
               <th>S NO</th>
               <th>Name</th>
               <th>Email</th>
+              <th>Date of Registration</th>
             </tr>
             {
               data1.map((object, index) => (
@@ -159,10 +157,23 @@ const Dashboard = () => {
                   <th scope='row'>{index + 1}</th>
                   <td>{object.Name}</td>
                   <td>{object.Email}</td>
+                  <td>{object.Date}</td>
                 </tr>
               ))
             }
           </table>
+        </div>
+      </div>
+
+      <div className="Graph">
+        <div className="Monthly">
+          <h1 className="H1">Monthly Registered Users</h1>
+          <Chart
+            options={state.options}
+            series={state.series}
+            type="bar"
+            width="500"
+          />
         </div>
       </div>
     </div>
