@@ -35,11 +35,11 @@ const UserLogin = () => {
     createUserWithEmailAndPassword(userAuth, Email, Password).then(async(res) => {
       const User = res.user;
       await updateProfile(User, {
-        displateName: Name
+        displayName: Name
       });
       toast.success("Signed Up!!")
       setDone(true)
-      navigate('/')
+      navigate('/home')
     }).catch((err) => {
       setDone(false)
       toast.error(err.message);

@@ -1,0 +1,73 @@
+.Main{
+    padding-top: 42px;
+    margin-left: 300px;
+    margin-right: 333px;
+    padding-bottom: 42px;
+    border-bottom: 1px solid black;
+}
+.titleAndImg{
+    display: flex;
+    justify-content: space-between;
+}
+.text h1{
+    font-size: 55px;
+}
+.text h4{
+    font-size: 17px;
+    width: 660px;
+    padding-bottom: 15px;
+    padding-top: 7px;
+}
+.text h5{
+    font-size: 18px;
+}
+
+.text .Topic{
+    background: #bbb4b4;
+    width: fit-content;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 10px;
+    border-radius: 30px;
+}
+.text .Date{
+    background: #bbb4b4;
+    width: fit-content;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 35px;
+    border-radius: 30px;
+}
+/* .text .Linkss{
+    text-decoration: none;
+    background: black;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 15px;
+    padding-left: 15px;
+    border-radius: 31px;
+    color: white;
+    text-align: center;
+    transition: 0.5s;
+} */
+.text .Linkss{
+    text-decoration: none;
+    color: black;
+    margin-left: 6px;
+    font-size: 21px;
+    transition: 0.5s;
+    cursor: pointer;
+    padding-bottom: 5px;
+}
+.text .Linkss:hover{
+    border-bottom: 1px solid black;
+}
+.Image{
+    width: 131px;
+    margin-top: 22px;
+    border-radius: 7px;
+}

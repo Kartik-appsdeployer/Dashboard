@@ -130,8 +130,9 @@ const Dashboard = () => {
                   <td>{object.Name}</td>
                   <td>{object.Email}</td>
                   <td>{object.Date}</td>
-                </tr> :
-                  <tr></tr>
+                </tr>
+                :
+                <tr></tr>
               ))
             }
           </table>
